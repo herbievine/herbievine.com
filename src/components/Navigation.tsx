@@ -6,7 +6,7 @@ function Navigation() {
 
     return (
         <div className="fixed z-50 right-10 top-1/2 flex flex-col justify-start items-center">
-            <p onClick={() => api.getActiveSection()}>Active</p>
+            <p onClick={() => console.log(api.getActiveSection())}>Acative</p>
             <p onClick={() => api.moveTo(1, 0)}>one</p>
             <p onClick={() => api.moveTo(2, 0)}>two</p>
             <p onClick={() => api.moveTo(3, 0)}>three</p>
