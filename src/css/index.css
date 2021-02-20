@@ -32,7 +32,7 @@ a {
         transform: translateY(-0px) skewY(0deg);
     }
     50% {
-        transform: translateY(-10px) skewY(-6deg);
+        transform: translateY(-10px) skewY(-4deg);
     }
     100% {
         transform: translateY(-0px) skewY(0deg);
@@ -44,7 +44,7 @@ a {
         transform: translateY(-0px) skewY(0deg);
     }
     50% {
-        transform: translateY(-10px) skewY(6deg);
+        transform: translateY(-10px) skewY(4deg);
     }
     100% {
         transform: translateY(-0px) skewY(0deg);

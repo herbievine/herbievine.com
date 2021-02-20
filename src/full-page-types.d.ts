@@ -150,5 +150,23 @@ declare module '@fullpage/react-fullpage' {
         function Wrapper(props: WrapperProps): React.ReactElement
     }
 
+    export interface Origin {
+        anchor: null
+        index: number
+        isFirst: boolean
+        isLast: boolean
+        item: HTMLElement
+    }
+
+    export interface Destination {
+        anchor: null
+        index: number
+        isFirst: boolean
+        isLast: boolean
+        item: HTMLElement
+    }
+
+    export type Direction = 'up' | 'down'
+
     export default ReactFullpage
 }
