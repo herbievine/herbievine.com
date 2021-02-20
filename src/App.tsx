@@ -4,20 +4,18 @@ import Landing from './components/Landing'
 import Biography from './components/Biography'
 import Skills from './components/Skills'
 import Socials from './components/Socials'
-// import Navigation from './components/Navigation'
+import Navigation from './components/Navigation'
 
 function App() {
     return (
         <div className="">
+            <Navigation />
             <FullPageScrollingEffect
                 scrollOverflow={true}
                 scrollingSpeed = {800}
                 render={({ fullpageApi }) => {
                     return (
                         <div>
-                            {/*<div className="fixed right-1.5 z-50">*/}
-                            {/*    <Navigation api={fullpageApi} />*/}
-                            {/*</div>*/}
                             <Landing api={fullpageApi} />
                             <Biography api={fullpageApi} />
                             <Skills api={fullpageApi} />
