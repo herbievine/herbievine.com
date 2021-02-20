@@ -1,18 +1,31 @@
 import React from 'react'
+import { default as FullPageScrollingEffect } from '@fullpage/react-fullpage'
+import Landing from './components/Landing'
+import Biography from './components/Biography'
+import Skills from './components/Skills'
+import Socials from './components/Socials'
+// import Navigation from './components/Navigation'
 
 function App() {
     return (
-        <div className="h-screen w-screen bg-blue-300">
-            <header className="">
-                <h2>
-                    Student and Full Stack Web Developer
-                </h2>
-            </header>
-            <main>
-                <p>
-                    Hi 👋, I'm Herbie
-                </p>
-            </main>
+        <div className="">
+            <FullPageScrollingEffect
+                scrollOverflow={true}
+                scrollingSpeed = {800}
+                render={({ fullpageApi }) => {
+                    return (
+                        <div>
+                            {/*<div className="fixed right-1.5 z-50">*/}
+                            {/*    <Navigation api={fullpageApi} />*/}
+                            {/*</div>*/}
+                            <Landing api={fullpageApi} />
+                            <Biography api={fullpageApi} />
+                            <Skills api={fullpageApi} />
+                            <Socials api={fullpageApi} />
+                        </div>
+                    )
+                }}
+            />
         </div>
     )
 }
