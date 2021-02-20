@@ -7,14 +7,14 @@ interface Biography {
 
 function Biography(props: Biography) {
     return (
-        <div className="section flex justify-start items-center md:ml-48 md:text-3xl">
-            <h3>
+        <div className="section flex justify-start items-center ml-8 sm:ml-16 md:ml-48 text-sm sm:text-2xl md:text-3xl">
+            <h1>
                 Skills<br/>
                 <br/>
                 😍 TypeScript, Vue, Node.<br/>
                 🙄 React, Nuxt.<br/>
                 😬 Flutter, Dart
-            </h3>
+            </h1>
         </div>
     )
 }

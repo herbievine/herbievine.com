@@ -7,12 +7,12 @@ interface Landing {
 
 function Landing(props: Landing) {
     return (
-        <div className="section flex justify-start items-center md:ml-48 md:text-8xl">
-            <h3>
+        <div className="section flex justify-start items-center ml-8 sm:ml-16 md:ml-48 text-4xl sm:text-6xl md:text-8xl">
+            <h1>
                 Hi,
                 <br />
                 I'm Herbie
-            </h3>
+            </h1>
         </div>
     )
 }
