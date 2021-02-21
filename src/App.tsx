@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { default as FullPageScrollingEffect, Origin, Destination, Direction } from '@fullpage/react-fullpage'
+import { default as FullPageScrollingEffect, fullpageApi, Origin, Destination, Direction } from '@fullpage/react-fullpage'
 import Landing from './components/Landing'
 import Biography from './components/Biography'
 import Skills from './components/Skills'
@@ -7,7 +7,8 @@ import Socials from './components/Socials'
 import Navigation from './components/Navigation'
 
 function App() {
-    const [scroll, setScroll] = useState('')
+    const [scroll, setScroll] = useState<string>('')
+    const [api, setApi] = useState<fullpageApi>()
 
     const handleOnLeave = (origin: Origin, destination: Destination, direction: Direction) => {
         scrollEffect(direction)
@@ -23,20 +24,23 @@ function App() {
 
     return (
         <div className="app">
-            <Navigation />
+            <Navigation api={api} />
             <div className={scroll ? `scroll--${scroll}` : ''}>
                 <FullPageScrollingEffect
                     onLeave={(origin, destination, direction) => handleOnLeave(origin, destination, direction)}
                     scrollOverflow={true}
                     scrollingSpeed = {800}
-                    render={({ fullpageApi }) => (
-                        <div>
-                            <Landing api={fullpageApi} />
-                            <Biography api={fullpageApi} />
-                            <Skills api={fullpageApi} />
-                            <Socials api={fullpageApi} />
-                        </div>
-                    )}
+                    render={({ fullpageApi }) => {
+                        setApi(fullpageApi)
+                        return (
+                            <div>
+                                <Landing api={fullpageApi} />
+                                <Biography api={fullpageApi} />
+                                <Skills api={fullpageApi} />
+                                <Socials api={fullpageApi} />
+                            </div>
+                        )
+                    }}
                 />
             </div>
         </div>

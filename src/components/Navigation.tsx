@@ -1,16 +1,64 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { fullpageApi } from '@fullpage/react-fullpage'
 
-function Navigation() {
-    const api: fullpageApi = window.fullpage_api
+interface Navigation {
+    api: fullpageApi | undefined
+}
+
+function Navigation(props: Navigation) {
+    const [activeTab, setActiveTab] = useState<number | undefined>(props.api?.getActiveSection()?.index)
+    const numberOfTabs = 4
+
+    // {activeTab === 0 ? 'green' : 'none'}
+
+    useEffect(() => console.log(activeTab), [activeTab])
+    useEffect(() => setActiveTab(props.api?.getActiveSection()?.index), [props.api?.getActiveSection()?.index])
 
     return (
-        <div className="fixed z-50 right-10 top-1/2 flex flex-col justify-start items-center">
-            <p onClick={() => console.log(api.getActiveSection())}>Acative</p>
-            <p onClick={() => api.moveTo(1, 0)}>one</p>
-            <p onClick={() => api.moveTo(2, 0)}>two</p>
-            <p onClick={() => api.moveTo(3, 0)}>three</p>
-            <p onClick={() => api.moveTo(4, 0)}>four</p>
+        <div className="fixed z-50 right-10 top-1/2 transform -translate-y-2/4 flex flex-col justify-center items-center">
+            <div>
+                {[...Array(numberOfTabs)].map((value, index) => {
+                    let isLast = index === numberOfTabs - 1
+
+                    return (
+                        <div
+                            onClick={() => props.api?.moveTo(index + 1, 0)}
+                            key={index}
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill={activeTab === index ? 'green' : 'none'}
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="4"
+                                    d="M13 01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            {!isLast &&
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="4"
+                                        d="M 12,3 V 20"
+                                    />
+                                </svg>
+                            }
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
