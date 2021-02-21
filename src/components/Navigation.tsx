@@ -9,8 +9,6 @@ function Navigation(props: Navigation) {
     const [activeTab, setActiveTab] = useState<number | undefined>(props.api?.getActiveSection()?.index)
     const numberOfTabs = 4
 
-    // {activeTab === 0 ? 'green' : 'none'}
-
     useEffect(() => console.log(activeTab), [activeTab])
     useEffect(() => setActiveTab(props.api?.getActiveSection()?.index), [props.api?.getActiveSection()?.index])
 
