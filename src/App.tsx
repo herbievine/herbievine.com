@@ -23,7 +23,7 @@ function App() {
     }
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-900">
+        <div className="app bg-gray-100 dark:bg-gray-900">
             <Navigation api={api} />
             <div className={scroll ? `scroll--${scroll}` : ''}>
                 <FullPageScrollingEffect

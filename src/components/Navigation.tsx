@@ -31,7 +31,7 @@ function Navigation(props: Navigation) {
                         >
                             <svg
                                 className="w-6 h-6"
-                                fill="none"
+                                fill={activeTab === index ? theme === 'light' ? 'black' : 'white' : 'none'}
                                 stroke={theme === 'light' ? 'black' : 'white'}
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ function Navigation(props: Navigation) {
                 {theme === 'dark' ? (
                     <HiOutlineSun fontSize={24} stroke={theme === 'dark' ? 'white' : 'black'} />
                 ) : (
-                    <FaRegMoon fontSize={20} />
+                    <FaRegMoon fontSize={20} stroke={theme === 'light' ? 'black' : 'white'} />
                 )}
             </div>
         </div>
