@@ -45,8 +45,28 @@ div {
     transition: background-size 0.25s ease;
 }
 
-.animated-underline:hover {
-    background-size: 100% 88%;
+@screen md {
+    .animated-underline:hover {
+        background-size: 100% 88%;
+    }
+}
+
+@screen lg {
+    .animated-underline:hover {
+        background-size: 100% 88%;
+    }
+}
+
+@screen xl {
+    .animated-underline:hover {
+        background-size: 100% 88%;
+    }
+}
+
+@screen 2xl {
+    .animated-underline:hover {
+        background-size: 100% 88%;
+    }
 }
 
 .scroll--up {
