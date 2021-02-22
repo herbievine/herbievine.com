@@ -37,14 +37,16 @@ div {
     transition: ease background-color 200ms;
 }
 
-.progress:first-child {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.animated-underline {
+    background-image: linear-gradient(120deg, #3874a0 0%, #3ba081 100%);
+    background-repeat: no-repeat;
+    background-size: 80% 0.3em;
+    background-position: 0 100%;
+    transition: background-size 0.25s ease;
 }
 
-.progress:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+.animated-underline:hover {
+    background-size: 100% 88%;
 }
 
 .scroll--up {

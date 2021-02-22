@@ -11,7 +11,7 @@ function Landing(props: Landing) {
             <h1>
                 Hi,
                 <br />
-                I'm Herbie
+                I'm <span className="animated-underline">Herbie</span>
             </h1>
         </div>
     )
