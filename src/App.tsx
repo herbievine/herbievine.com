@@ -9,8 +9,10 @@ import Navigation from './components/Navigation'
 function App() {
     const [scroll, setScroll] = useState<string>('')
     const [api, setApi] = useState<fullpageApi>()
+    const [navigation, setNavigation] = useState<[Origin, Destination, Direction] | []>([])
 
     const handleOnLeave = (origin: Origin, destination: Destination, direction: Direction) => {
+        setNavigation([origin, destination, direction])
         scrollEffect(direction)
     }
 
@@ -24,7 +26,7 @@ function App() {
 
     return (
         <div className="app bg-gray-100 dark:bg-gray-900">
-            <Navigation api={api} />
+            <Navigation api={api} onLeave={navigation} />
             <div className={scroll ? `scroll--${scroll}` : ''}>
                 <FullPageScrollingEffect
                     onLeave={(origin, destination, direction) => handleOnLeave(origin, destination, direction)}

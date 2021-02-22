@@ -1,49 +1,23 @@
-// @ts-nocheck
-import React from 'react';
+import React from 'react'
+import { useTheme } from 'react-hook-tailwind-darkmode'
+import { FaRegMoon } from 'react-icons/fa'
+import { HiOutlineSun } from 'react-icons/hi'
 
-const getInitialTheme = () => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-        const storedPrefs = window.localStorage.getItem('color-theme');
-        if (typeof storedPrefs === 'string') {
-            return storedPrefs;
-        }
-
-        const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
-        if (userMedia.matches) {
-            return 'dark';
-        }
-    }
-
-    // If you want to use dark theme as the default, return 'dark' instead
-    return 'light';
-};
-
-export const ThemeContext = React.createContext();
-
-export const ThemeProvider = ({ initialTheme, children }) => {
-    const [theme, setTheme] = React.useState(getInitialTheme);
-
-    const rawSetTheme = (rawTheme) => {
-        const root = window.document.documentElement;
-        const isDark = rawTheme === 'dark';
-
-        root.classList.remove(isDark ? 'light' : 'dark');
-        root.classList.add(rawTheme);
-
-        localStorage.setItem('color-theme', rawTheme);
-    };
-
-    if (initialTheme) {
-        rawSetTheme(initialTheme);
-    }
-
-    React.useEffect(() => {
-        rawSetTheme(theme);
-    }, [theme]);
+function Socials() {
+    const { changeTheme, theme } = useTheme()
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    );
-};
+        <div
+            className="fixed z-50 right-10 bottom-10"
+            onClick={() => changeTheme()}
+        >
+            {theme === 'dark' ? (
+                <HiOutlineSun fontSize={24} stroke={theme === 'dark' ? 'white' : 'black'} />
+            ) : (
+                <FaRegMoon fontSize={20} stroke={theme === 'light' ? 'black' : 'white'} />
+            )}
+        </div>
+    )
+}
+
+export default Socials

@@ -24,39 +24,84 @@ svg {
     transition: ease color 200ms;
 }
 
+div {
+    transition:
+        ease background-color 200ms,
+        ease border-top-color 200ms,
+        ease border-right-color 200ms,
+        ease border-bottom-color 200ms,
+        ease border-left-color 200ms;
+}
+
 .app {
     transition: ease background-color 200ms;
 }
 
+.progress:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.progress:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 .scroll--up {
-    animation: skewUp 0.8s infinite;
+    animation: skewUp 800ms ease;
 }
 
 .scroll--down {
-    animation: skewDown 0.8s infinite;
+    animation: skewDown 800ms ease;
+}
+
+.transition--up {
+    animation: skewUp 800ms ease;
+}
+
+.transition--down {
+    animation: skewDown 800ms ease;
 }
 
 @keyframes skewUp {
     0% {
-        transform: translateY(-0px) skewY(0deg);
+        transform: translateY(0) skewY(0);
     }
     50% {
         transform: translateY(-10px) skewY(-2deg);
     }
     100% {
-        transform: translateY(-0px) skewY(0deg);
+        transform: translateY(0) skewY(0);
     }
 }
 
 @keyframes skewDown {
     0% {
-        transform: translateY(-0px) skewY(0deg);
+        transform: translateY(0) skewY(0);
     }
     50% {
         transform: translateY(-10px) skewY(2deg);
     }
     100% {
-        transform: translateY(-0px) skewY(0deg);
+        transform: translateY(0) skewY(0);
+    }
+}
+
+@keyframes transitionUp {
+    0% {
+        @apply h-full
+    }
+    100% {
+        @apply h-20
+    }
+}
+
+@keyframes transitionDown {
+    0% {
+        @apply h-0
+    }
+    100% {
+        @apply h-20
     }
 }
 
