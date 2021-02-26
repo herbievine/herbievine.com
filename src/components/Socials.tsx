@@ -34,20 +34,19 @@ function Socials(props: Socials) {
                 get in touch!
 
                 <div className="grid grid-cols-2 grid-rows-2 grid-flow-row gap-y-6 mt-6">
-                    {socials.map(((value, index, array) => {
-                        const isLast = index === array.length
-
-                        return (
-                            <a key={index} href={value.path} target="_BLANK" rel="noreferrer">
-                                <span className={`
-                                    animated-underline
-                                    ${!isLast ? 'mr-6' : ''}
-                                `}>
-                                    {value.name}
-                                </span>
-                            </a>
-                        )
-                    }))}
+                    {socials.map(((value, index) =>
+                        <a
+                            key={index}
+                            href={value.path}
+                            target="_BLANK"
+                            rel="noreferrer"
+                            className="dark:text-gray-100"
+                        >
+                            <span className="animated-underline">
+                                {value.name}
+                            </span>
+                        </a>
+                    ))}
                 </div>
             </h1>
         </div>

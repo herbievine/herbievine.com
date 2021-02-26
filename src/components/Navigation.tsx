@@ -29,7 +29,7 @@ function Navigation(props: Navigation) {
     return (
         <>
             <div className="absolute h-80 z-50 right-14 top-1/2 transform -translate-y-2/4 flex flex-col justify-center items-center">
-                <animated.div className="absolute rounded-lg top-0 w-2 md:w-6 lg:w-6 xl:w-6 bg-gradient-to-b from-green-500 to-blue-500" style={springConfig} />
+                <animated.div className="absolute rounded-lg top-0 w-3 md:w-6 lg:w-6 xl:w-6 bg-gradient-to-b from-green-500 to-blue-500" style={springConfig} />
             </div>
             <div className="fixed z-50 right-12 bottom-10" onClick={() => changeTheme()}>
                 {theme === 'dark' ? (
