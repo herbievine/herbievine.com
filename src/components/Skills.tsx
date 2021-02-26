@@ -1,4 +1,3 @@
-import React from 'react'
 import { fullpageApi } from '@fullpage/react-fullpage'
 
 interface Biography {

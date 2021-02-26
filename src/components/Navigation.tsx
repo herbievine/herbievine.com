@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useSpring, animated } from 'react-spring'
 import { fullpageApi, Origin, Destination, Direction } from '@fullpage/react-fullpage'
 import { useTheme } from "react-hook-tailwind-darkmode"
