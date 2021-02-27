@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { default as FullPageScrollingEffect, fullpageApi, Origin, Destination, Direction } from '@fullpage/react-fullpage'
 import Landing from './components/Landing'
 import Biography from './components/Biography'
