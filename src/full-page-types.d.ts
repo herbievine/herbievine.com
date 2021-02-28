@@ -69,9 +69,19 @@ declare module '@fullpage/react-fullpage' {
         afterResize?(width: number, height: number): void
         afterReBuild?(): void
         afterResponsive?(isResponsive?: any): void
-        afterSlideLoad?(section?: any, origin?: any, destination?: any, direction?: any): void
+        afterSlideLoad?(
+            section?: any,
+            origin?: any,
+            destination?: any,
+            direction?: any
+        ): void
         onLeave?(origin?: any, destination?: any, direction?: any): void
-        onSlideLeave?(section?: any, origin?: any, destination?: any, direction?: any): void
+        onSlideLeave?(
+            section?: any,
+            origin?: any,
+            destination?: any,
+            direction?: any
+        ): void
 
         /* keys for extensions */
         fadingEffectKey?: string
@@ -135,12 +145,15 @@ declare module '@fullpage/react-fullpage' {
 
     interface FullPageProps extends fullpageOptions {
         licenseKey?: string
-        render: (comp: { state: any; fullpageApi: fullpageApi }) => React.ReactElement | void
+        render: (comp: {
+            state: any
+            fullpageApi: fullpageApi
+        }) => React.ReactElement | void
         debug?: boolean
         pluginWrapper?: () => void
     }
 
-    class ReactFullpage extends React.Component<FullPageProps>{}
+    class ReactFullpage extends React.Component<FullPageProps> {}
 
     interface WrapperProps {
         children: React.ReactNode

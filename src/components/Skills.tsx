@@ -8,16 +8,12 @@ function Biography(props: Biography) {
     return (
         <div className="section flex justify-start items-center h-screen ml-8 sm:ml-12 md:ml-32 text-sm sm:text-2xl md:text-3xl dark:text-gray-100">
             <h1 className="mb-6 max-w-1/2">
-                I like to use Vue and React
-                for my front-end apps. I
-                often use Express & Node
-                for any back-end related work.
+                I like to use Vue and React for my front-end apps. I often use
+                Express & Node for any back-end related work.
             </h1>
             <h1 className="max-w-1/2">
-                I'm currently focusing on
-                learning Dart along with
-                Flutter to create mobile 
-                apps.
+                I'm currently focusing on learning Dart along with Flutter to
+                create mobile apps.
             </h1>
         </div>
     )

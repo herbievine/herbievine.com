@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { default as FullPageScrollingEffect, fullpageApi, Origin, Destination, Direction } from '@fullpage/react-fullpage'
+import {
+    default as FullPageScrollingEffect,
+    fullpageApi,
+    Origin,
+    Destination,
+    Direction
+} from '@fullpage/react-fullpage'
 import Landing from './components/Landing'
 import Biography from './components/Biography'
 import Skills from './components/Skills'
@@ -9,9 +15,15 @@ import Navigation from './components/Navigation'
 function App() {
     const [scroll, setScroll] = useState<string>('')
     const [api, setApi] = useState<fullpageApi>()
-    const [navigation, setNavigation] = useState<[Origin, Destination, Direction] | []>([])
+    const [navigation, setNavigation] = useState<
+        [Origin, Destination, Direction] | []
+    >([])
 
-    const handleOnLeave = (origin: Origin, destination: Destination, direction: Direction) => {
+    const handleOnLeave = (
+        origin: Origin,
+        destination: Destination,
+        direction: Direction
+    ) => {
         setNavigation([origin, destination, direction])
         scrollEffect(direction)
     }
@@ -29,9 +41,11 @@ function App() {
             <Navigation api={api} onLeave={navigation} />
             <div className={scroll ? `scroll--${scroll}` : ''}>
                 <FullPageScrollingEffect
-                    onLeave={(origin, destination, direction) => handleOnLeave(origin, destination, direction)}
+                    onLeave={(origin, destination, direction) =>
+                        handleOnLeave(origin, destination, direction)
+                    }
                     scrollOverflow={true}
-                    scrollingSpeed = {800}
+                    scrollingSpeed={800}
                     render={({ fullpageApi }) => {
                         setApi(fullpageApi)
                         return (

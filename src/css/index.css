@@ -29,11 +29,8 @@ svg {
 }
 
 div {
-    transition:
-        ease background-color 200ms,
-        ease border-top-color 200ms,
-        ease border-right-color 200ms,
-        ease border-bottom-color 200ms,
+    transition: ease background-color 200ms, ease border-top-color 200ms,
+        ease border-right-color 200ms, ease border-bottom-color 200ms,
         ease border-left-color 200ms;
 }
 
@@ -115,19 +112,18 @@ div {
 
 @keyframes transitionUp {
     0% {
-        @apply h-full
+        @apply h-full;
     }
     100% {
-        @apply h-20
+        @apply h-20;
     }
 }
 
 @keyframes transitionDown {
     0% {
-        @apply h-0
+        @apply h-0;
     }
     100% {
-        @apply h-20
+        @apply h-20;
     }
 }
-
