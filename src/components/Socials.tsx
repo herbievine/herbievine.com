@@ -43,7 +43,7 @@ function Socials(props: Socials) {
                     </a>
                 ))}
             </div>
-            <h2 className="max-w-1/2 mt-10 text-xl">
+            <h2 className="max-w-1/2 mt-10 text-xs sm:text-xl">
                 This site is powered by{' '}
                 <span
                     onClick={() =>
