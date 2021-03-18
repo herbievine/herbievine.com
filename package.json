@@ -21,7 +21,7 @@
     "workbox-cli": "^6.1.1"
   },
   "scripts": {
-    "serve": "workbox generateSW && craco start",
+    "serve": "craco start",
     "build": "workbox generateSW && craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
