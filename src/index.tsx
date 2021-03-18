@@ -15,5 +15,6 @@ render(
 serviceWorkerRegistration.register()
 reportWebVitals()
 
-// test
-console.log(process.env.NODE_ENV)
+if (process.env.NODE_ENV === 'production') {
+    console.error = function () {}
+}
