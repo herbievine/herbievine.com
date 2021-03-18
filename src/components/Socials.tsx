@@ -29,22 +29,31 @@ function Socials(props: Socials) {
             <h1 className="max-w-1/2">
                 I've started to work on some freelancing on Fiverr. Please get
                 in touch!
-                <div className="grid grid-cols-2 grid-rows-2 grid-flow-row gap-y-6 mt-6">
-                    {socials.map((value, index) => (
-                        <a
-                            key={index}
-                            href={value.path}
-                            target="_BLANK"
-                            rel="noreferrer"
-                            className="dark:text-gray-100"
-                        >
-                            <span className="animated-underline">
-                                {value.name}
-                            </span>
-                        </a>
-                    ))}
-                </div>
             </h1>
+            <div className="grid grid-cols-2 grid-rows-2 grid-flow-row gap-y-6 mt-6">
+                {socials.map((value, index) => (
+                    <a
+                        key={index}
+                        href={value.path}
+                        target="_BLANK"
+                        rel="noreferrer"
+                        className="dark:text-gray-100"
+                    >
+                        <span className="animated-underline">{value.name}</span>
+                    </a>
+                ))}
+            </div>
+            <h2 className="max-w-1/2 mt-10 text-xl">
+                This site is powered by{' '}
+                <span
+                    onClick={() =>
+                        window.location.assign('https://www.netlify.com/')
+                    }
+                    className="animated-underline cursor-pointer"
+                >
+                    Netlify
+                </span>
+            </h2>
         </div>
     )
 }

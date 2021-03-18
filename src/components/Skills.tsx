@@ -12,8 +12,8 @@ function Biography(props: Biography) {
                 Express & Node for any back-end related work.
             </h1>
             <h1 className="max-w-1/2">
-                I'm currently focusing on learning Dart along with Flutter to
-                create mobile apps.
+                I'm currently focusing on extending my knowledge of React by
+                using Next with GraphQL, Apollo and PostgreSQL
             </h1>
         </div>
     )
