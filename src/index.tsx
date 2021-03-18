@@ -14,3 +14,6 @@ render(
 
 serviceWorkerRegistration.register()
 reportWebVitals()
+
+// test
+console.log(process.env.NODE_ENV)
