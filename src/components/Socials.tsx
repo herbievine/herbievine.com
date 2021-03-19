@@ -43,17 +43,17 @@ function Socials(props: Socials) {
                     </a>
                 ))}
             </div>
-            <h2 className="max-w-1/2 mt-10 text-xs sm:text-xl">
-                This site is powered by{' '}
-                <span
-                    onClick={() =>
-                        window.location.assign('https://www.netlify.com/')
-                    }
-                    className="animated-underline cursor-pointer"
+            <div className="max-w-1/2 mt-10 flex items-center dark:text-gray-100">
+                <h2 className="text-xs sm:text-xl">This site is powered by</h2>
+                <a
+                    href="https://www.netlify.com/"
+                    target="_BLANK"
+                    rel="noreferrer"
+                    className="text-xs sm:text-xl ml-1"
                 >
-                    Netlify
-                </span>
-            </h2>
+                    <span className="animated-underline">Netlify</span>
+                </a>
+            </div>
         </div>
     )
 }
