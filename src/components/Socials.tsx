@@ -46,15 +46,15 @@ function Socials(props: Socials) {
             <div className="max-w-1/2 mt-10 flex items-center dark:text-gray-100">
                 <h2 className="text-xs sm:text-xl">
                     Latest project (only for desktop):
+                    <a
+                        href="https://loop.herbievine.com/"
+                        target="_BLANK"
+                        rel="noreferrer"
+                        className="text-xs sm:text-xl ml-1"
+                    >
+                        <span className="animated-underline">Loop</span>
+                    </a>
                 </h2>
-                <a
-                    href="https://www.netlify.com/"
-                    target="_BLANK"
-                    rel="noreferrer"
-                    className="text-xs sm:text-xl ml-1"
-                >
-                    <span className="animated-underline">Loop</span>
-                </a>
             </div>
         </div>
     )
