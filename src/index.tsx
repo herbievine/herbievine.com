@@ -8,21 +8,21 @@ import reportWebVitals from './reportWebVitals'
 function noConsole() {}
 
 if (process.env.NODE_ENV === 'production') {
-    console.log(
-        '%cWell hello there :)',
-        'background: black; color: white; padding: 10px;'
-    )
+  console.log(
+    '%cWell hello there :)',
+    'background: black; color: white; padding: 10px;'
+  )
 
-    console.log = noConsole
-    console.warn = noConsole
-    console.error = noConsole
+  console.log = noConsole
+  console.warn = noConsole
+  console.error = noConsole
 }
 
 render(
-    <StrictMode>
-        <App />
-    </StrictMode>,
-    document.getElementById('root')
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root')
 )
 
 serviceWorkerRegistration.register()
