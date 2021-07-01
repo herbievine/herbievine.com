@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-    @apply overscroll-y-none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  @apply overscroll-y-none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 p,
@@ -18,112 +18,112 @@ h4,
 h5,
 h6,
 a {
-    font-family: termina, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    transition: ease color 200ms;
+  font-family: termina, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  transition: ease color 200ms;
 }
 
 svg {
-    transition: ease color 200ms;
+  transition: ease color 200ms;
 }
 
 div {
-    transition: ease background-color 200ms, ease border-top-color 200ms,
-        ease border-right-color 200ms, ease border-bottom-color 200ms,
-        ease border-left-color 200ms;
+  transition: ease background-color 200ms, ease border-top-color 200ms,
+    ease border-right-color 200ms, ease border-bottom-color 200ms,
+    ease border-left-color 200ms;
 }
 
 .app {
-    transition: ease background-color 200ms;
+  transition: ease background-color 200ms;
 }
 
 .animated-underline {
-    background-image: linear-gradient(120deg, #3b82f6 0%, #10b981 100%);
-    background-repeat: no-repeat;
-    background-size: 80% 0.3em;
-    background-position: 0 100%;
-    transition: background-size 0.25s ease;
+  background-image: linear-gradient(120deg, #3b82f6 0%, #10b981 100%);
+  background-repeat: no-repeat;
+  background-size: 80% 0.3em;
+  background-position: 0 100%;
+  transition: background-size 0.25s ease;
 }
 
 @screen md {
-    .animated-underline:hover {
-        background-size: 100% 88%;
-    }
+  .animated-underline:hover {
+    background-size: 100% 88%;
+  }
 }
 
 @screen lg {
-    .animated-underline:hover {
-        background-size: 100% 88%;
-    }
+  .animated-underline:hover {
+    background-size: 100% 88%;
+  }
 }
 
 @screen xl {
-    .animated-underline:hover {
-        background-size: 100% 88%;
-    }
+  .animated-underline:hover {
+    background-size: 100% 88%;
+  }
 }
 
 @screen 2xl {
-    .animated-underline:hover {
-        background-size: 100% 88%;
-    }
+  .animated-underline:hover {
+    background-size: 100% 88%;
+  }
 }
 
 .scroll--up {
-    animation: skewUp 800ms ease;
+  animation: skewUp 800ms ease;
 }
 
 .scroll--down {
-    animation: skewDown 800ms ease;
+  animation: skewDown 800ms ease;
 }
 
 .transition--up {
-    animation: skewUp 800ms ease;
+  animation: skewUp 800ms ease;
 }
 
 .transition--down {
-    animation: skewDown 800ms ease;
+  animation: skewDown 800ms ease;
 }
 
 @keyframes skewUp {
-    0% {
-        transform: translateY(0) skewY(0);
-    }
-    50% {
-        transform: translateY(-10px) skewY(-2deg);
-    }
-    100% {
-        transform: translateY(0) skewY(0);
-    }
+  0% {
+    transform: translateY(0) skewY(0);
+  }
+  50% {
+    transform: translateY(-10px) skewY(-2deg);
+  }
+  100% {
+    transform: translateY(0) skewY(0);
+  }
 }
 
 @keyframes skewDown {
-    0% {
-        transform: translateY(0) skewY(0);
-    }
-    50% {
-        transform: translateY(-10px) skewY(2deg);
-    }
-    100% {
-        transform: translateY(0) skewY(0);
-    }
+  0% {
+    transform: translateY(0) skewY(0);
+  }
+  50% {
+    transform: translateY(-10px) skewY(2deg);
+  }
+  100% {
+    transform: translateY(0) skewY(0);
+  }
 }
 
 @keyframes transitionUp {
-    0% {
-        @apply h-full;
-    }
-    100% {
-        @apply h-20;
-    }
+  0% {
+    @apply h-full;
+  }
+  100% {
+    @apply h-20;
+  }
 }
 
 @keyframes transitionDown {
-    0% {
-        @apply h-0;
-    }
-    100% {
-        @apply h-20;
-    }
+  0% {
+    @apply h-0;
+  }
+  100% {
+    @apply h-20;
+  }
 }
