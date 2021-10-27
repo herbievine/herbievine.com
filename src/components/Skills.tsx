@@ -13,8 +13,8 @@ function Biography(props: Biography) {
         database work.
       </h1>
       <h1 className="max-w-1/2">
-        I'm currently focusing on extending my knowledge in Flutter by building
-        a messaging app called Semeru.
+        I'm currently creating a messaging app using React Native, PostgreSQL,
+        and React Reanimated.
       </h1>
     </div>
   )
