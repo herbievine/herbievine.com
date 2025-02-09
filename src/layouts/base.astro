@@ -1,0 +1,76 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils';
+import "../styles/globals.css"
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const lang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(lang)
+
+const title = t("home.title") as string;
+const description = t('home.about') as string;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Penkle Analytics -->
+    <script async defer data-domain="herbievine.com" src="https://penkle.com/scripts/penkle.min.js"
+    ></script>
+
+    <!-- Font preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="herbie vine" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
+    <!-- <meta property="og:image:width" content="1200" /> -->
+    <!-- <meta property="og:image:height" content="630" /> -->
+    <!-- <meta property="og:image:alt" content="herbie vine" /> -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+    <!-- <meta property="twitter:image:width" content="1200" /> -->
+    <!-- <meta property="twitter:image:height" content="630" /> -->
+    <!-- <meta property="twitter:image:alt" content="herbie vine" /> -->
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+    />
+  </head>
+  <body class="px-4 py-16 sm:p-24 flex justify-center bg-white dark:bg-neutral-950 transition-colors duration-200 ease-in-out">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
