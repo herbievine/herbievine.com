@@ -8,6 +8,7 @@ import { defaultLang, languages } from "./src/i18n/ui";
 export default defineConfig({
   site: "https://herbievine.com",
   trailingSlash: "never",
+  output: "static",
   integrations: [tailwind(), sitemap()],
   i18n: {
     locales: Object.keys(languages),
