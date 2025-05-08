@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
 import "../styles/globals.css"
 
@@ -11,9 +12,12 @@ const title = t("home.title") as string;
 const description = t('home.about') as string;
 ---
 
+
 <!doctype html>
 <html lang={lang}>
   <head>
+    <ClientRouter />
+
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
