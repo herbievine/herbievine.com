@@ -19,6 +19,12 @@ export const ui: Record<
 
     // WORK
     "work.title": "** work **",
+    "work.univia.title": "univia",
+    "work.univia.location": "paris, france",
+    "work.univia.items": [
+      "- decreased LCP by 77% and reduced CLS to 0",
+      "- improved overall DX by implementing tRPC and nuqs",
+    ],
     "work.inflow.title": "inflow",
     "work.inflow.location": "paris, france",
     "work.inflow.items": [
@@ -56,6 +62,12 @@ export const ui: Record<
 
     // WORK
     "work.title": "** travail **",
+    "work.univia.title": "univia",
+    "work.univia.location": "paris, france",
+    "work.univia.items": [
+      "- réduit le LCP de 77 % et abaissé le CLS à 0",
+      "- amélioré l'expérience utilisateur globale en implémentant tRPC et nuqs",
+    ],
     "work.inflow.title": "inflow",
     "work.inflow.location": "paris, france",
     "work.inflow.items": [
