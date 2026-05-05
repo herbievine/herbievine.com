@@ -1,5 +1,4 @@
 ---
-import { languages, defaultLang } from '../i18n/ui'
 import { useTranslations } from '../i18n/utils'
 import Base from '../layouts/base.astro'
 
@@ -26,6 +25,40 @@ const t = useTranslations('en')
       <h2 class="text-neutral-800 dark:text-neutral-200">
         {t('work.title')}
       </h2>
+      <div class="flex flex-col space-y-1">
+        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+          <span>
+            {t('work.helloleo.title')}
+          </span>
+        </p>
+        <p class="text-neutral-500 dark:text-neutral-400">
+          {t('work.helloleo.location')}
+        </p>
+        <ol>
+          {(t('work.helloleo.items') as string[]).map((item) => (
+            <li class="text-neutral-800 dark:text-neutral-200">
+              {item}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="flex flex-col space-y-1">
+        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+          <span>
+            {t('work.terros.title')}
+          </span>
+        </p>
+        <p class="text-neutral-500 dark:text-neutral-400">
+          {t('work.terros.location')}
+        </p>
+        <ol>
+          {(t('work.terros.items') as string[]).map((item) => (
+            <li class="text-neutral-800 dark:text-neutral-200">
+              {item}
+            </li>
+          ))}
+        </ol>
+      </div>
       <div class="flex flex-col space-y-1">
         <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
           <span>
@@ -100,9 +133,6 @@ const t = useTranslations('en')
       <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
         <a href="https://x.com/h82719918" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
           {t('links.x')}
-        </a>
-        <a href="https://linkedin.com/in/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
-          {t('links.linkedin')}
         </a>
         <a href="https://github.com/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
           {t('links.github')}
