@@ -15,9 +15,6 @@ const t = useTranslations('fr')
       <p class="text-neutral-500 dark:text-neutral-400">
         {t('home.location')}
       </p>
-      <p class="text-neutral-500 dark:text-neutral-400">
-        {t('home.job')}
-      </p>
       <p class="text-neutral-800 dark:text-neutral-200">
         {t('home.about')}
       </p>
@@ -27,26 +24,12 @@ const t = useTranslations('fr')
         {t('work.title')}
       </h2>
       <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          <span>
-            {t('work.helloleo.title')}
-          </span>
-        </p>
-        <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.helloleo.location')}
-        </p>
-        <ol>
-          {(t('work.helloleo.items') as string[]).map((item) => (
-            <li class="text-neutral-800 dark:text-neutral-200">
-              {item}
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          <span>
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
             {t('work.terros.title')}
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.terros.role')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
@@ -61,9 +44,32 @@ const t = useTranslations('fr')
         </ol>
       </div>
       <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          <span>
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            {t('work.helloleo.title')}
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.helloleo.role')}
+          </span>
+        </p>
+        <p class="text-neutral-500 dark:text-neutral-400">
+          {t('work.helloleo.location')}
+        </p>
+        <ol>
+          {(t('work.helloleo.items') as string[]).map((item) => (
+            <li class="text-neutral-800 dark:text-neutral-200">
+              {item}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="flex flex-col space-y-1">
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
             {t('work.univia.title')}
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.univia.role')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
@@ -78,10 +84,15 @@ const t = useTranslations('fr')
         </ol>
       </div>
       <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          <a href="https://inflow.com" target="_blank" class="hover:underline">
-            {t('work.inflow.title')}
-          </a>
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            <a href="https://inflow.com" target="_blank" class="hover:underline">
+              {t('work.inflow.title')}
+            </a>
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.inflow.role')}
+          </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
           {t('work.inflow.location')}
@@ -95,10 +106,15 @@ const t = useTranslations('fr')
         </ol>
       </div>
       <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          <a href="https://payback.co" target="_blank" class="hover:underline">
-            {t('work.payback.title')}
-          </a>
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            <a href="https://payback.co" target="_blank" class="hover:underline">
+              {t('work.payback.title')}
+            </a>
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.payback.role')}
+          </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
           {t('work.payback.location')}
@@ -112,8 +128,13 @@ const t = useTranslations('fr')
         </ol>
       </div>
       <div class="flex flex-col space-y-1">
-        <p class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-          {t('work.wn.title')}
+        <p>
+          <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            {t('work.wn.title')}
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400">
+            - {t('work.wn.role')}
+          </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
           {t('work.wn.location')}
