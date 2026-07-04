@@ -1,3 +1,4 @@
+
 ---
 import { useTranslations } from '../i18n/utils'
 import Base from '../layouts/base.astro'
@@ -25,14 +26,16 @@ const t = useTranslations('en')
       <div class="flex flex-col space-y-1">
         <p>
           <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-            {t('work.terros.title')}
+            <a href="https://terros.io" target="_blank">
+              {t('work.terros.title')}
+            </a>
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.terros.role')}
+            - {t('work.terros.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.terros.location')}
+          {t('work.terros.role')} - {t('work.terros.location')}
         </p>
         <ol>
           {(t('work.terros.items') as string[]).map((item) => (
@@ -45,14 +48,16 @@ const t = useTranslations('en')
       <div class="flex flex-col space-y-1">
         <p>
           <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-            {t('work.helloleo.title')}
+            <a href="https://helloleo.dev" target="_blank">
+              {t('work.helloleo.title')}
+            </a>
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.helloleo.role')}
+            - {t('work.helloleo.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.helloleo.location')}
+          {t('work.helloleo.role')} - {t('work.helloleo.location')}
         </p>
         <ol>
           {(t('work.helloleo.items') as string[]).map((item) => (
@@ -65,14 +70,16 @@ const t = useTranslations('en')
       <div class="flex flex-col space-y-1">
         <p>
           <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-            {t('work.univia.title')}
+            <a href="https://univia.ai" target="_blank">
+              {t('work.univia.title')}
+            </a>
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.univia.role')}
+            - {t('work.univia.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.univia.location')}
+          {t('work.univia.role')} - {t('work.univia.location')}
         </p>
         <ol>
           {(t('work.univia.items') as string[]).map((item) => (
@@ -85,16 +92,16 @@ const t = useTranslations('en')
       <div class="flex flex-col space-y-1">
         <p>
           <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-            <a href="https://inflow.com" target="_blank" class="hover:underline">
+            <a href="https://inflowpay.com" target="_blank">
               {t('work.inflow.title')}
             </a>
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.inflow.role')}
+            - {t('work.inflow.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.inflow.location')}
+          {t('work.inflow.role')} - {t('work.inflow.location')}
         </p>
         <ol>
           {(t('work.inflow.items') as string[]).map((item) => (
@@ -112,11 +119,11 @@ const t = useTranslations('en')
             </a>
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.payback.role')}
+            - {t('work.payback.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.payback.location')}
+          {t('work.payback.role')} - {t('work.payback.location')}
         </p>
         <ol>
           {(t('work.payback.items') as string[]).map((item) => (
@@ -132,11 +139,11 @@ const t = useTranslations('en')
             {t('work.wn.title')}
           </span>
           <span class="text-neutral-500 dark:text-neutral-400">
-            - {t('work.wn.role')}
+            - {t('work.wn.description')}
           </span>
         </p>
         <p class="text-neutral-500 dark:text-neutral-400">
-          {t('work.wn.location')}
+          {t('work.wn.role')} - {t('work.wn.location')}
         </p>
         <ol>
           {(t('work.wn.items') as string[]).map((item) => (
@@ -152,7 +159,7 @@ const t = useTranslations('en')
         {t('links.title')}
       </h2>
       <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-        <a href="https://x.com/h82719918" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
+        <a href="https://x.com/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
           {t('links.x')}
         </a>
         <a href="https://github.com/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
