@@ -7,14 +7,22 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "check": "bunx --bun @biomejs/biome check --write",
+    "format": "bunx --bun @biomejs/biome format --write",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.3.1",
-    "@astrojs/tailwind": "^5.1.5",
-    "astro": "^5.7.11",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "@astrojs/check": "0.9.9",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.3",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.2",
+    "astro": "7.0.6",
+    "dayjs": "^1.11.21",
+    "tailwindcss": "4.3.2",
+    "typescript": "6.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.2"
   }
 }

@@ -5,16 +5,21 @@ export const languages = {
 
 export const defaultLang = "en";
 
-export const ui: Record<
-  keyof typeof languages,
-  Record<string, string | string[]>
-> = {
+export const ui = {
   en: {
+    // NAV
+    "nav.home": "home",
+    "nav.blog": "blog",
+    "nav.back": "back",
+
     // HOME
     "home.title": "herbie vine",
     "home.location": "paris, france",
     "home.about":
       "hi! i'm herbie, and i'm the lead developer at terros and a core engineer at helloleo. outside of that, i'm a passionate dev with a few side projects, some cool automations and a raspberry pi. i'm also an investor, runner, gym-goer and coffee lover!",
+
+    // BLOG
+    "blog.title": "** posts **",
 
     // WORK
     "work.title": "** work **",
@@ -29,7 +34,8 @@ export const ui: Record<
       "- automated internal dev workflows with AI to cut repetitive work",
     ],
     "work.helloleo.title": "helloleo",
-    "work.helloleo.description": "AI platform that builds the apps your ERP doesn't have",
+    "work.helloleo.description":
+      "AI platform that builds the apps your ERP doesn't have",
     "work.helloleo.role": "core engineer",
     "work.helloleo.location": "2026 - paris, france",
     "work.helloleo.items": [
@@ -39,7 +45,8 @@ export const ui: Record<
       "- made apps provider-agnostic: swap D1 for SQLite, KV for Redis, R2 for S3",
     ],
     "work.univia.title": "univia",
-    "work.univia.description": "platform helping students discover international universities",
+    "work.univia.description":
+      "platform helping students discover international universities",
     "work.univia.role": "core engineer",
     "work.univia.location": "2025 - paris, france",
     "work.univia.items": [
@@ -79,11 +86,19 @@ export const ui: Record<
     "links.email": "email",
   },
   fr: {
+    // NAV
+    "nav.home": "accueil",
+    "nav.blog": "blog",
+    "nav.back": "retour",
+
     // HOME
     "home.title": "herbie vine",
     "home.location": "paris, france",
     "home.about":
-      "salut ! moi c'est herbie, lead développeur chez terros et ingénieur principal chez helloleo. à côté de ça, je suis un dev passionné avec quelques projets perso, des automatisations sympas et un raspberry pi. je suis aussi investisseur, coureur, adepte de la salle et amateur de café !",
+      "salut ! moi c'est herbie, lead développeur chez terros et ingénieur chez helloleo. à côté de ça, je suis un dev passionné avec quelques projets perso, des automatisations sympas et un raspberry pi. je suis aussi investisseur, coureur, adepte de la salle et amateur de café !",
+
+    // BLOG
+    "blog.title": "** publications **",
 
     // WORK
     "work.title": "** travail **",
@@ -98,7 +113,8 @@ export const ui: Record<
       "- automatisé les workflows de développement internes avec l'IA",
     ],
     "work.helloleo.title": "helloleo",
-    "work.helloleo.description": "plateforme IA qui crée les apps que votre ERP n'a pas",
+    "work.helloleo.description":
+      "plateforme IA qui crée les apps que votre ERP n'a pas",
     "work.helloleo.role": "ingénieur principal",
     "work.helloleo.location": "2026 - paris, france",
     "work.helloleo.items": [
@@ -108,7 +124,8 @@ export const ui: Record<
       "- rendu les apps agnostiques : D1 vers SQLite, KV vers Redis, R2 vers S3",
     ],
     "work.univia.title": "univia",
-    "work.univia.description": "plateforme d'orientation vers les universités internationales",
+    "work.univia.description":
+      "plateforme d'orientation vers les universités internationales",
     "work.univia.role": "ingénieur principal",
     "work.univia.location": "2025 - paris, france",
     "work.univia.items": [
@@ -147,4 +164,4 @@ export const ui: Record<
     "links.bookCall": "réserver un appel",
     "links.email": "email",
   },
-} as const;
+};

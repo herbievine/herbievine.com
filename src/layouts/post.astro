@@ -1,0 +1,29 @@
+---
+import Base from "./base.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  article: {
+    publishedDate: Date;
+  };
+}
+
+const { title, description, image, article } = Astro.props;
+
+const urlLang = getLangFromUrl(Astro.url);
+const t = useTranslations(urlLang);
+const backHref = urlLang === "fr" ? "/fr" : "/";
+---
+
+<Base title={title} description={description} image={image} article={article}>
+  <Fragment slot="nav-start">
+    <a href={backHref} class="text-neutral-600 dark:text-neutral-500 underline">
+      {t("nav.back")}
+    </a>
+  </Fragment>
+  <Fragment slot="nav" />
+  <slot />
+</Base>

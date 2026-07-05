@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from "astro:content";
+import dayjs from "dayjs";
+import Post from "../../../layouts/post.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Post
+  title={post.data.title}
+  description={post.data.description}
+  article={{ publishedDate: post.data.publishedDate }}
+>
+  <article class="w-full flex flex-col space-y-8">
+    <div class="flex flex-col space-y-2">
+      <h1 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+        {post.data.title}
+      </h1>
+      <p class="text-neutral-500 dark:text-neutral-400">
+        {dayjs(post.data.publishedDate).format("dddd D MMMM, YYYY")}
+      </p>
+    </div>
+    <div class="prose dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</Post>

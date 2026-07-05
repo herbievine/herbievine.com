@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import type { Lang } from "../i18n/utils";
+import { useTranslations } from "../i18n/utils";
+import Base from "../layouts/base.astro";
+import Post from "./post.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const work = [
+  "terros",
+  "helloleo",
+  "univia",
+  "inflow",
+  "payback",
+  "wn",
+] as const;
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+);
+---
+
+<Base title={t('home.title')}>
+  <div class="w-full flex flex-col space-y-16 sm:space-y-24">
+    <div class="flex flex-col space-y-2">
+      <h1 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+        {t('home.title')}
+      </h1>
+      <p class="text-neutral-500 dark:text-neutral-400">
+        {t('home.location')}
+      </p>
+      <p class="text-neutral-800 dark:text-neutral-200">
+        {t('home.about')}
+      </p>
+    </div>
+    <div class="flex flex-col space-y-6">
+      <h2 class="text-neutral-800 dark:text-neutral-200">
+        {t('blog.title')}
+      </h2>
+      <div class="flex flex-col space-y-4">
+        {posts.map((post) => (
+          <Post {...post} />
+        ))}
+      </div>
+    </div>
+    <div class="flex flex-col space-y-6">
+      <h2 class="text-neutral-800 dark:text-neutral-200">
+        {t('work.title')}
+      </h2>
+      {work.map(w => (
+        <div class="flex flex-col space-y-1">
+          <p>
+            <span class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+              <a href="https://terros.io" target="_blank">
+                {t(`work.${w}.title`)}
+              </a>
+            </span>
+            <span class="text-neutral-500 dark:text-neutral-400">
+              {' '}- {t(`work.${w}.description`)}
+            </span>
+          </p>
+          <p class="text-neutral-500 dark:text-neutral-400">
+            {t(`work.${w}.role`)} - {t(`work.${w}.location`)}
+          </p>
+          <ol>
+            {(t(`work.${w}.items`) as string[]).map((item) => (
+              <li class="text-neutral-800 dark:text-neutral-200">
+                {item}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))}
+    </div>
+    <div class="flex flex-col space-y-6">
+      <h2 class="text-neutral-800 dark:text-neutral-200">
+        {t('links.title')}
+      </h2>
+      <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+        <a href="https://x.com/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
+          {t('links.x')}
+        </a>
+        <a href="https://github.com/herbievine" target="_blank" class="text-neutral-600 dark:text-neutral-500 underline">
+          {t('links.github')}
+        </a>
+        <a href="https://cal.com/herbievine/30min" class="text-neutral-600 dark:text-neutral-500 underline">
+          {t('links.bookCall')}
+        </a>
+        <a href="mailto:me@herbievine.com" class="text-neutral-600 dark:text-neutral-500 underline">
+          {t('links.email')}
+        </a>
+      </div>
+    </div>
+  </div>
+</Base>
